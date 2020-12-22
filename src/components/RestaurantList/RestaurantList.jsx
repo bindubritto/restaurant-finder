@@ -7,10 +7,12 @@ import Search from './Search/Search';
 const RestaurantList = ({ locations = [], showMarkerInfo, queryString = '', handleChange }) => (
     <div className={classes.list}>
         <h2>Resturant List</h2>
-        <p>{locations.length} shop found</p>
+
+        {locations.length > 1 && <p>{locations.length} shops found</p>}
+        {locations.length === 0 && <p>No shop found</p>}
+        {locations.length === 1 && <p>1 shop found</p>}
 
         <Search queryString={queryString} handleChange={handleChange} />
-
         {/* <input
             type="text"
             value={queryString || ''}
