@@ -82,6 +82,38 @@ class MapBuilder extends Component {
         window.mapMarkers = this.mapMarkers;
     };
 
+    prepareContent = (location) =>
+        `<div >
+        <h4 > <a className={classes.textRight} href="#">${location.venue.name}</a></h4>
+        <p>Address: ${location.venue.location.address || 'Not Available'}</p>
+        </div>`;
+
+    handleClick = (location) => {
+        // console.log("hi");
+        for (let i = 0; i < window.mapMarkers.length; i += 1) {
+            if (location.venue.id === window.mapMarkers[i].title) {
+                const content = this.prepareContent(location);
+                window.infoWindow.setContent(content);
+                console.log('ith marker object', window.mapMarkers[i]);
+                window.infoWindow.open(window.mapObject, window.mapMarkers[i]);
+            }
+        }
+    };
+
+    handleChange = (text) => {
+        this.setState({ query: text });
+        if (text) {
+            const { locations } = this.state;
+            this.setState({ locations: this.filterLocation(text, locations) });
+        } else {
+            const { allLocations } = this.state;
+            this.setState({ locations: allLocations });
+        }
+    };
+
+    filterLocation = (text, locations) =>
+        locations.filter((location) => location.venue.name.toLowerCase().includes(text));
+
     render() {
         this.injectScriptTag();
 
@@ -100,7 +132,6 @@ class MapBuilder extends Component {
                     queryString={query}
                     handleChange={this.handleChange}
                 />
-
                 <Map />
             </div>
         );

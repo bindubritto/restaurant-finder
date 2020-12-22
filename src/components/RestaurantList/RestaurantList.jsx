@@ -2,16 +2,20 @@
 import React from 'react';
 import Restaurant from './Restaurant/Restaurant';
 import classes from './RestaurantList.module.css';
+import Search from './Search/Search';
 
 const RestaurantList = ({ locations = [], showMarkerInfo, queryString = '', handleChange }) => (
     <div className={classes.list}>
         <h2>Resturant List</h2>
         {/* <p>{queryString}</p> */}
-        <input
+
+        <Search queryString={queryString} handleChange={handleChange} />
+
+        {/* <input
             type="text"
             value={queryString || ''}
             onChange={(e) => handleChange(e.target.value)}
-        />
+        /> */}
         {/* onClick={() => showMarkerInfo(loc)} */}
         {locations.map((location) => (
             <Restaurant
