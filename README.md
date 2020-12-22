@@ -2,69 +2,59 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### `npm install`
 
-In the project directory, you can run:
+Before you run this application, you need to install all the dependencies. Please type `npm install`
+in your project terminal to install.
 
 ### `npm start`
 
-Runs the app in the development mode.\
+To run the app in the development mode, you need to type `npm start` in your project terminal.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The page will reload if you make edits. You will also see any lint errors in the console.
 
-### `npm test`
+### `Design`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+At first, I design a basic layout for building this app. This basic design help me to choose which component should\
+I place where. And if you want a high level understanding of this project without see any code you should go through this design.
 
-### `npm run build`
+Here is the design link [https://www.figma.com/file/YAb198Vvcf2wlfmHns9mcZ/Restaurant-Finder-App?node-id=0%3A1](https://www.figma.com/file/YAb198Vvcf2wlfmHns9mcZ/Restaurant-Finder-App?node-id=0%3A1)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Project Structure`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Here, I followed a basic but really useful structure which is easy to understant and maintainable.\
+I differentiate stateless functional component and stateful class component in different folder\
+which is components and containers accordingly. Then I indroduce apis and utils named 2 new folders.\
+The reason behind these 2 folder is very important. In apis folder, I wrote all the apis which is need\
+all through the application. So, I made it just because of a single source of information. Which is really\
+helpful for bug fixing and future changes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+And the reason behind the utils folder is accessibility and scalability. Cause, in my application there were\
+some api keys. Which may expire after a decent amount of time. So, in case of future access or at least run\
+I need to change those keys, with new keys. So, this is useful, I hope.
 
-### `npm run eject`
+### `Scalability`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Again, the utils folder is useful to scale up the application. Here, we can change some parameter like radius,\
+so if we want to get information from a bigger radius, we can change this parameter. Another is category, which\
+is really amazing, cause our primary goal of this app is to find restaurant, but we can change the category of\
+for drinks, coffee etc.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `Test`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Here, I setup a simple test file for RestaurantList component. With the help of jest and enzyme library,\
+I managed to test this component. Though, I could create separate folder to manage test scripts but as I'm\
+writing only one script, I keep it in the component folder. You can run test by writing `npm run test Restaurant.test.js`\
+in your project terminal.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### `Things may confuse end user`
 
-## Learn More
+Here, I use google map api key to load the google map. But recently, google does not providing free api key\
+for development. They said to setup a billable account to proceed. And they push an error in browser console\
+so, it may confuse users. But if you have a key with this validity, you can use your own to load map. I can not\
+manage to create a billable google account.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `Things I left out`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Here, I would use Redux, Material UI and do this project in TypeScript for sure if I got more time.
