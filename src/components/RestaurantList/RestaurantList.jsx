@@ -7,7 +7,7 @@ import Search from './Search/Search';
 const RestaurantList = ({ locations = [], showMarkerInfo, queryString = '', handleChange }) => (
     <div className={classes.list}>
         <h2>Resturant List</h2>
-        {/* <p>{queryString}</p> */}
+        <p>{locations.length} shop found</p>
 
         <Search queryString={queryString} handleChange={handleChange} />
 

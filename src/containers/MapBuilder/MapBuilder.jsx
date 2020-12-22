@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import * as api from '../../apis/apis';
 import Map from '../../components/Map/Map';
 import RestaurantList from '../../components/RestaurantList/RestaurantList';
+import * as key from '../../utils/keys';
 
 class MapBuilder extends Component {
     state: {
@@ -26,8 +27,10 @@ class MapBuilder extends Component {
     };
 
     initMap = () => {
+        const latitude = parseFloat(`${key.latitude}`);
+        const longitude = parseFloat(`${key.longitude}`);
         const map = new window.google.maps.Map(document.getElementById('map'), {
-            center: { lat: 23.7814042, lng: 90.3977987 },
+            center: { lat: latitude, lng: longitude },
             zoom: 14,
         });
         window.googleMapObject = map;
@@ -60,7 +63,6 @@ class MapBuilder extends Component {
 
     addMarkers = (locations) => {
         for (let i = 0; i < locations.length; i += 1) {
-            // console.log('venue', locations[i].venue);
             const marker = new window.google.maps.Marker({
                 position: {
                     lat: locations[i].venue.location.lat,
