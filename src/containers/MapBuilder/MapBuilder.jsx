@@ -91,12 +91,10 @@ class MapBuilder extends Component {
         </div>`;
 
     handleClick = (location) => {
-        // console.log("hi");
         for (let i = 0; i < window.mapMarkers.length; i += 1) {
             if (location.venue.id === window.mapMarkers[i].title) {
                 const content = this.prepareContent(location);
                 window.infoWindow.setContent(content);
-                console.log('ith marker object', window.mapMarkers[i]);
                 window.infoWindow.open(window.mapObject, window.mapMarkers[i]);
             }
         }
@@ -118,9 +116,7 @@ class MapBuilder extends Component {
 
     render() {
         this.injectScriptTag();
-
         const { locations, query } = this.state || {};
-        console.log(locations);
 
         if (locations !== undefined) {
             this.addMarkers(locations);
