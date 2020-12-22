@@ -100,19 +100,19 @@ class MapBuilder extends Component {
         }
     };
 
-    handleChange = (text) => {
-        this.setState({ query: text });
-        if (text) {
-            const { locations } = this.state;
-            this.setState({ locations: this.filterLocation(text, locations) });
+    handleChange = (input) => {
+        this.setState({ query: input });
+        const { allLocations } = this.state;
+        if (input) {
+            const filteredLocations = this.filterLocation(input, allLocations);
+            this.setState({ locations: filteredLocations });
         } else {
-            const { allLocations } = this.state;
             this.setState({ locations: allLocations });
         }
     };
 
-    filterLocation = (text, locations) =>
-        locations.filter((location) => location.venue.name.toLowerCase().includes(text));
+    filterLocation = (input, locations) =>
+        locations.filter((location) => location.venue.name.toLowerCase().includes(input));
 
     render() {
         this.injectScriptTag();
