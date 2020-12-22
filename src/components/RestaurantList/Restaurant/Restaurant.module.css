@@ -1,6 +1,7 @@
 .container {
   margin: 0;
-  border: yellow;
-  background-color: rgb(17, 114, 121);
+  border: none;
+  background-color: rgb(10, 156, 95);
   border-radius: 1px;
+  color: white;
 }

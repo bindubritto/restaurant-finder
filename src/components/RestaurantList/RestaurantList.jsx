@@ -13,12 +13,7 @@ const RestaurantList = ({ locations = [], showMarkerInfo, queryString = '', hand
         {locations.length === 1 && <p>1 shop found</p>}
 
         <Search queryString={queryString} handleChange={handleChange} />
-        {/* <input
-            type="text"
-            value={queryString || ''}
-            onChange={(e) => handleChange(e.target.value)}
-        /> */}
-        {/* onClick={() => showMarkerInfo(loc)} */}
+
         {locations.map((location) => (
             <Restaurant
                 location={location}
@@ -26,21 +21,6 @@ const RestaurantList = ({ locations = [], showMarkerInfo, queryString = '', hand
                 key={location.venue.id}
             />
         ))}
-        {/* <ol>
-            {locations.map((loc) => (
-                <li key={loc.venue.id}>
-                    <div>
-                        <h4>
-                            Name:
-                            <a href="#" onClick={() => showMarkerInfo(loc)}>
-                                {loc.venue.name}
-                            </a>
-                        </h4>
-                        <p>Address: {loc.venue.location.address}</p>
-                    </div>
-                </li>
-            ))}
-        </ol> */}
     </div>
 );
 

@@ -1,8 +1,3 @@
-* {
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
 .container {
   border-bottom: 1px solid #5250507e;
   display: flex;
@@ -17,9 +12,9 @@
   margin: 0;
 }
 
-.textRight {
+/* .textRight {
   text-align: right;
-}
+} */
 
 .textCenter {
   text-align: center;

@@ -1,6 +1,7 @@
 .header {
-  background-color: rgb(146, 198, 219);
-  padding: 35px;
+  background-color: rgb(34, 105, 114);
+  padding: 1px;
   text-align: center;
-  font-size: 20px;
+  font-size: 14px;
+  color: white;
 }
