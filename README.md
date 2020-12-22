@@ -44,9 +44,9 @@ for drinks, coffee etc.
 ### `Test`
 
 Here, I setup a simple test file for RestaurantList component. With the help of jest and enzyme library,\
-I managed to test this component. Though, I could create separate folder to manage test scripts but as I'm\
-writing only one script, I keep it in the component folder. You can run test by writing `npm run test Restaurant.test.js`\
-in your project terminal.
+I managed to test this component. Though, I could create separate folder to manage test scripts\
+but as I'm writing only one script, I keep it in the component folder. You can run test by writing\
+`npm run test Restaurant.test.js` in your project terminal.
 
 ### `Things may confuse end user`
 
