@@ -50,10 +50,10 @@ in your project terminal.
 
 ### `Things may confuse end user`
 
-Here, I use google map api key to load the google map. But recently, google does not providing free api key\
-for development. They said to setup a billable account to proceed. And they push an error in browser console\
-so, it may confuse users. But if you have a key with this validity, you can use your own to load map. I can not\
-manage to create a billable google account.
+Here, I use google map api key to load the google map. But recently, google does not providing free api key for development.\
+They said to setup a billable account to proceed. And they push an error in browser console and gives a pop-up.\
+So, it may confuse users. But if you have a key with this validity, you can use your own to load map. I can not\
+manage myself to create a billable google account.
 
 ### `Things I left out`
 
