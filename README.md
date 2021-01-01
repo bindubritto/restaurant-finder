@@ -14,12 +14,19 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits. You will also see any lint errors in the console.
 
+
+
 ### `Design`
 
 At first, I design a basic layout for building this app. This basic design help me to choose which component should\
 I place where. And if you want a high level understanding of this project without see any code you should go through this design.
 
 Here is the design link [https://www.figma.com/file/YAb198Vvcf2wlfmHns9mcZ/Restaurant-Finder-App?node-id=0%3A1](https://www.figma.com/file/YAb198Vvcf2wlfmHns9mcZ/Restaurant-Finder-App?node-id=0%3A1)
+
+
+### `Live Site`
+
+Here is the live site link of this app after build.[Restaurant Finder App](https://festive-nobel-72c7e4.netlify.app/)
 
 ### `Project Structure`
 
