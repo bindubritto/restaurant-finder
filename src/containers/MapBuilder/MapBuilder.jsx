@@ -95,7 +95,7 @@ class MapBuilder extends Component {
             if (location.venue.id === window.mapMarkers[i].title) {
                 const content = this.prepareContent(location);
                 window.infoWindow.setContent(content);
-                window.infoWindow.open(window.mapObject, window.mapMarkers[i]);
+                window.infoWindow.open(window.googleMapObject, window.mapMarkers[i]);
             }
         }
     };
